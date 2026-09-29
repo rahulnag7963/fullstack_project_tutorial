@@ -11,6 +11,11 @@ export default [
     languageOptions: { ecmaVersion: 'latest', sourceType: 'module', globals: { ...globals.node } },
   },
   {
+    // Playwright's page.evaluate() runs code inside the browser, so it may use browser globals.
+    files: ['e2e/**/*.js'],
+    languageOptions: { globals: { ...globals.browser } },
+  },
+  {
     files: ['client/**/*.{js,jsx}'],
     languageOptions: {
       globals: { ...globals.browser },
