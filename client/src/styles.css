@@ -44,7 +44,6 @@ body {
     radial-gradient(ellipse at 15% 0%, var(--page-glow) 0%, transparent 55%),
     radial-gradient(ellipse at 100% 100%, var(--page-deep) 0%, transparent 60%),
     var(--page);
-  background-attachment: fixed;
   color: var(--on-blue);
   font-size: 17px;
   line-height: 1.5;
@@ -135,7 +134,8 @@ button:disabled {
 
 .date {
   margin: 0;
-  font-size: 36px;
+  font-size: 34px;
+  white-space: nowrap;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -641,7 +641,7 @@ button:disabled {
   height: 32px;
   border-radius: 50%;
   background: var(--yellow);
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* Alternating yellow and orange chips, like the mock's day picker. */
@@ -797,6 +797,7 @@ button:disabled {
 
 .history ol {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 6px;
   margin: 0;
   padding: 0;
@@ -805,6 +806,7 @@ button:disabled {
 
 .history button {
   display: flex;
+  min-width: 0;
   align-items: center;
   gap: 10px;
   width: 100%;
